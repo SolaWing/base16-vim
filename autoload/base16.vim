@@ -115,14 +115,14 @@ function! base16#setup(config)
     call <sid>hi("Exception",     s:gui08, "", s:cterm08, "", "", "")
     call <sid>hi("FoldColumn",    s:gui0C, s:gui01, s:cterm0C, s:cterm01, "", "")
     call <sid>hi("Folded",        s:gui03, s:gui01, s:cterm03, s:cterm01, "", "")
-    call <sid>hi("IncSearch",     s:gui01, s:gui0A, s:cterm01, s:cterm0A, "none", "")
+    call <sid>hi("IncSearch",     s:gui0A, s:gui01, s:cterm0A, s:cterm01, "standout", "")
+    call <sid>hi("Search",        s:gui0A, s:gui01, s:cterm0A, s:cterm01, "reverse", "")
     call <sid>hi("Italic",        "", "", "", "", "none", "")
     call <sid>hi("Macro",         s:gui08, "", s:cterm08, "", "", "")
     call <sid>hi("MatchParen",    s:gui00, s:gui03, s:cterm00, s:cterm03,  "", "")
     call <sid>hi("ModeMsg",       s:gui0B, "", s:cterm0B, "", "", "")
     call <sid>hi("MoreMsg",       s:gui0B, "", s:cterm0B, "", "", "")
     call <sid>hi("Question",      s:gui0D, "", s:cterm0D, "", "", "")
-    call <sid>hi("Search",        s:gui01, s:gui0A, s:cterm01, s:cterm0A,  "", "")
     call <sid>hi("SpecialKey",    s:gui03, "", s:cterm03, "", "", "")
     call <sid>hi("TooLong",       s:gui08, "", s:cterm08, "", "", "")
     call <sid>hi("Underlined",    s:gui08, "", s:cterm08, "", "", "")
@@ -290,7 +290,7 @@ function! base16#setup(config)
 endfunction
 
 " Highlighting function
-fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
+fun! <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
     if a:guifg != ""
         exec "hi " . a:group . " guifg=#" . a:guifg
     endif
